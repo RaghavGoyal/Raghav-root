@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo 3 - Selectors & Events</title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="first-section" class="first-section">
+        DIV 1 | id="first-section" | class="first-section"
+    </div>
+    <div id="second-section" class="dummy second-section">
+        DIV 2 | id="second-section" | class="dummy second-section"
+    </div>
+    <span id="first-inline" class="dummy first-inline">
+        SPAN 1 | id="first-inline" | class="dummy first-inline"
+    </span>
+    <!-- This is BAD, BAD!! IDs should not be repeated. Only used here 
+    to show an example -->
+    <span id="second-section" class="dummy second-inline">
+        SPAN 2 | id="second-section" | class="dummy second-inline"
+    </span>
+    <div id="third-section" class="third-section">
+        DIV 3 | id="third-section" | class="third-section"
+    </div>
+    <div class="instructions">
+        <span>Instructions - </span>
+        <ol>
+            <li>Pick up all the div elements</li>
+            <li>Pick up the element with the id 'first-inline'</li>
+            <li>Pick up the span with the id 'second-section'</li>
+            <li>Pick up all the elements with the class 'dummy'</li>
+            <li>Create a span element, and append it inside the element with id 'third-section'</li>
+            <li>Add a click listener to the document.</li>
+        </ol>
+    </div>
+</body>
+
+</html>

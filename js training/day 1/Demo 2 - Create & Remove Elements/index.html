@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo 2 - Create & Remove Elements</title>
+    <script src="script.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="first-section" class="first-section">
+        DIV 1
+    </div>
+    <div>
+        <!--Note: A better way to to bind events is to use .addEventListener()
+        instead of the onclick attribute, separates HTML and JS.-->
+        <button onclick="AppendSection();">Append new section</button>
+        <button onclick="RemoveSection();">Remove section added</button>
+    </div>
+</body>
+
+</html>

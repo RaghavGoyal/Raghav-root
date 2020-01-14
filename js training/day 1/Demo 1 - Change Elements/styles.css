@@ -1,0 +1,12 @@
+body {
+    font-family: Calibri;
+}
+div {
+    margin: 10px;
+}
+.first-section {
+    border: 2px solid red;
+}
+.second-section {
+    border: 2px solid green;
+}

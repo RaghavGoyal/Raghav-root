@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo 1 - Change Elements</title>
+    <script src="script.js"></script>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!--Note: A better way to add styles is to use CSS classes, separates HTML and CSS
+    and helps with the specificity.-->
+    <div id="first-section" class="first-section" style="background-color: pink;">
+        This is DIV 1 - Hello
+    </div>
+    <div id="second-section" class="second-section" style="background-color: yellow;">
+        This is DIV 2 - World
+    </div>
+    <div>
+        <input id="cricket" type="text" value="Cricket" score="200">
+        <input id="football" type="text" value="Football" score="3">
+    </div>
+    <div>
+        <!--Note: A better way to to bind events is to use .addEventListener()
+        instead of the onclick attribute, separates HTML and JS.-->
+        <button onclick="ChangeText();">Copy text from DIV 1 to DIV 2</button>
+        <button onclick="ChangeAttribute();">Copy text and score from Cricket to Football</button>
+        <button onclick="ChangeAppearance();">Copy background color from DIV 1 to DIV 2</button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object Create Example</title>
+	<script type="text/javascript">
+
+	function SuperType(name){
+		this.name = name;
+		this.colors = ["red", "blue", "green"];
+	}
+
+	var instance1 = new SuperType("Nicholas");
+
+	<!-- var objectOne = { -->
+		<!-- x: 10, -->
+		<!-- y: { -->
+			<!-- z: 20 -->
+		<!-- } -->
+	<!-- }; -->
+
+	
+	var objectTwo = Object.create(instance1);
+
+	<!-- objectTwo.x = 100; -->
+	<!-- objectTwo.y.z = 200; -->
+
+	console.log('ObjectTwo - ')
+	console.dir(objectTwo);
+	console.log(objectTwo.name);
+	console.log(objectTwo.colors);
+
+	</script>
+</head>
+<body>
+		<!-- An easier way of using the prototype pattern -->
+</body>
+</html>
