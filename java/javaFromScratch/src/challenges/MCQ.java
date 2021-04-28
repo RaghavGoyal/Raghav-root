@@ -20,7 +20,7 @@ public class MCQ {
 
         if(choice.equalsIgnoreCase("a"))
             System.out.println("Congratulations! You have selected the correct ans.");
-        
+
         else
             System.out.println("Oh no, Wrong ans.");
     }
