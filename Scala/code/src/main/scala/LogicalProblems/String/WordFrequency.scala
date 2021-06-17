@@ -12,8 +12,8 @@ object WordFrequency extends App {
 
   private def getFrequencyOfWords(string: String) = {
     val words = string.split(" ").toList
-    words.distinct.flatMap { word =>
-      Map(word -> getCount(word, words))
+    words.distinct.map { word =>
+      (word, getCount(word, words))
     }
   }
 
