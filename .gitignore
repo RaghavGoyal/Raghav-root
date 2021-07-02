@@ -6,4 +6,6 @@
 /Scala/code/.idea/
 /Scala/code/.bsp/
 /MachineLearning/code/StatisticalAnalysis/.idea/
-/learningGraphQL/.idea/
+*.idea
+*.DS_Store
+*.class
