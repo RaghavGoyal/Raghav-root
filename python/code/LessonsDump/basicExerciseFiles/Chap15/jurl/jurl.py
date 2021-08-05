@@ -14,7 +14,7 @@ import random
 import os, sys
 
 g = dict(
-    config_file = 'db.conf',
+    config_file ='db.conf',
     table_name = 'jurl'
 )
 

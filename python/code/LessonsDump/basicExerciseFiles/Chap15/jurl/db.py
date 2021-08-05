@@ -20,7 +20,7 @@ __version__ = "2.0.1"
 # namespace container for global variables
 g = dict(
     VERSION = 'db.py {} bwDB {}'.format(__version__, bwDB.version()),
-    config_file = 'db.conf',
+    config_file ='db.conf',
     template_ext = '.html',
     table_name = 'jurl',
     stacks = dict(
