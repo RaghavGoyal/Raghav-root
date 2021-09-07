@@ -1,5 +1,5 @@
 """
-    A function may bee defined in such a way that it takes-
+    A function may be defined in such a way that it takes-
      variable number of arguments, or
      variable number of keyword arguments.
 
