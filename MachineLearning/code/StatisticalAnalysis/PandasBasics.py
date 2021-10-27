@@ -1,42 +1,46 @@
-print("hello from python...")
+if __name__ == '__main__':
 
-# pip install pandas
-import pandas as pd
+    print("hello from python...")
 
-dataFrame = pd.read_csv('./resources/titanic.csv')
-# head prints the 5 rows by default.
-# this behaviour can be modified by changing the property:
-# pd.options.diaplay.max_columns = 6
-head = dataFrame.head()
+    # pip install pandas
+    import pandas as pd
 
-# describe is used to provide the statistical analysis of the data in dataframe.
-describe = dataFrame.describe()
+    dataFrame = pd.read_csv('./resources/titanic.csv')
+    # head prints the 5 rows by default.
+    # this behaviour can be modified by changing the property:
+    # pd.options.diaplay.max_columns = 6
+    head = dataFrame.head()
+    # print(head)
 
-# selecting a single column from dataframe:
-fare = dataFrame['Fare']
+    # describe is used to provide the statistical analysis of the data in dataframe.
+    describe = dataFrame.describe()
+    # print(describe)
 
-# multiple columns from dataframe can be selected as:
-# use of [[]] is compulsary
-combination = dataFrame[['Fare','Age']].head()
+    # selecting a single column from dataframe:
+    fare = dataFrame['Fare']
 
-# Adding a new column to the dataset:
-# It only adds new column to the dataFrame that gets created by reading the csv.
-# NO change in CSV.
-dataFrame['isMale'] = dataFrame['Sex'] == 'male'
-# print(dataFrame.head())
+    # multiple columns from dataframe can be selected as:
+    # use of [[]] is compulsary
+    combination = dataFrame[['Fare','Age']].head()
 
-# values read from pandas are read as dataframe.
-# The DataFrame values should be converted to numpy array for performing statistical analysis on them.
-# This can be done by using .values attribute on a dataframe.
-values = dataFrame['Fare'].values
-# print(values)
+    # Adding a new column to the dataset:
+    # It only adds new column to the dataFrame that gets created by reading the csv.
+    # NO change in CSV.
+    dataFrame['isMale'] = dataFrame['Sex'] == 'male'
+    # print(dataFrame.head())
 
-# Shape attribute applied to any numpy array returns the number of rows and columns in the array.
-shape = values.shape
-# print(shape)
+    # values read from pandas are read as dataframe.
+    # The DataFrame values should be converted to numpy array for performing statistical analysis on them.
+    # This can be done by using .values attribute on a dataframe.
+    values = dataFrame['Fare'].values
+    # print(values)
 
-# For multiple columns, this can be performed as:
-# print(dataFrame[['Fare', 'Age']].values.shape)
+    # Shape attribute applied to any numpy array returns the number of rows and columns in the array.
+    shape = values.shape
+    # print(shape)
+
+    # For multiple columns, this can be performed as:
+    # print(dataFrame[['Fare', 'Age']].values.shape)
 
 # Selecting a particular cell value from numpy array:
 arr = dataFrame[['Pclass', 'Fare', 'Age']].head().values
