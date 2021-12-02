@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <bean id="adrs" class="model.Address">
+        <property name="city" value="Mathura"/>
+        <property name="state" value="Uttar Pradesh"/>
+        <property name="zipCode" value="281000"/>
+    </bean>
+    
+    <bean id="emp1" class="model.Employee" init-method="myInit" destroy-method="myDest">
+        <property name="id" value="102"/>
+        <property name="name" value="John"/>
+        <property name="salary" value="50000"/>
+        <!-- Dependency injection using constructor -->
+        <constructor-arg ref="adrs"/>
+    </bean>
+    
+    <bean id="emp2" class="model.Employee2">
+        <property name="id" value="103"/>
+        <property name="name" value="Jack"/>
+        <property name="salary" value="46000"/>
+        <!-- Dependency injection using setter -->
+        <property name="address" ref="adrs"/>
+    </bean>
+    
+    
+    <!-- activate the @PostConstruct and @PreDestroy annotation -->
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>
+    
+    <bean id="emp3" class="model.Employee3">
+        <property name="id" value="103"/>
+        <property name="name" value="Jack"/>
+        <property name="salary" value="46000"/>
+        <property name="address" ref="adrs"/>
+    </bean>
+    
+</beans>
