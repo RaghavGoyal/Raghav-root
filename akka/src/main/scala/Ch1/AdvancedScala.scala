@@ -1,5 +1,7 @@
 package Ch1
 
+import scala.language.implicitConversions
+
 object AdvancedScala extends App{
 
   /**

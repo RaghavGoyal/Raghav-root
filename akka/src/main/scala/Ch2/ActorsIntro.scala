@@ -2,6 +2,7 @@ package Ch2
 
 import akka.actor.{Actor, ActorSystem, Props}
 
+// First
 object ActorsIntro extends App {
 
 //  creating an Actor System:
@@ -37,6 +38,7 @@ object ActorsIntro extends App {
   val wordCounter2 = actorSystem.actorOf(Props[WordCountActor], "wordCounter2")
 
 //  Sending a message to the actor:
+//  ! is method called tell; it is used to send message to the actor
   wordCounter ! "This is a test string."
   wordCounter2 ! "This is a another test string."
 //  The message sending to actor is completely asynchronous.
