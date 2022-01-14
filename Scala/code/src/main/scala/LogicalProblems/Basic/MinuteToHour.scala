@@ -1,6 +1,5 @@
 package LogicalProblems.Basic
 
-import scala.concurrent.duration.{Duration, MINUTES}
 import scala.io.StdIn
 
 object MinuteToHour extends App {
@@ -12,7 +11,5 @@ object MinuteToHour extends App {
     val hours = (i / 60).floor.toInt
     val minutes = i % 60
     "%02d : %02d".format(hours, minutes)
-
-    "hello".reverse
   }
 }

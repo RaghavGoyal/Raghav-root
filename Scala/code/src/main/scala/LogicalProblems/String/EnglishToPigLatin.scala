@@ -27,6 +27,6 @@ object EnglishToPigLatin extends App {
 
   private def convert(word: String) : String = {
     val append = "ay"
-    s"${word.tail}${word.head}$append".toLowerCase
+    s"${word.tail}${word.head}$append".toLowerCase.capitalize
   }
 }

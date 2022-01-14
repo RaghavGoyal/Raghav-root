@@ -10,11 +10,25 @@ object WordFrequency extends App {
   val output = getFrequencyOfWords(input)
   println(output)
 
+  val output2 = getFrequencyOfWordsUsingMap(input)
+  println(output2)
+
   private def getFrequencyOfWords(string: String) = {
     val words = string.split(" ").toList
     words.distinct.map { word =>
       (word, getCount(word, words))
     }
+  }
+
+  private def getFrequencyOfWordsUsingMap(string: String) = {
+    val wordToFrequencyMap = scala.collection.mutable.Map[String, Int]()
+    string.split(" ").toList.foreach{word =>
+      if(wordToFrequencyMap.contains(word))
+        wordToFrequencyMap.update(word, wordToFrequencyMap(word) + 1)
+      else
+        wordToFrequencyMap.put(word, 1)
+    }
+    wordToFrequencyMap
   }
 
   private def getCount(word: String, list: List[String]) : Int = {

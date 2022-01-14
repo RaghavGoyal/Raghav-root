@@ -7,6 +7,7 @@ object Sum extends App {
   val list = List(1,2,3,4,5)
   val sum = getSum(list)
   println(sum)
+  println(list.reduce((a,b) => a+b))
 
   private def getSum(list: List[Int]) :Int = {
     list match {

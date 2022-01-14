@@ -2,6 +2,10 @@ package concepts
 
 /**
  * Function Currying:
+ * Currying is the process of converting a function with multiple arguments into
+ * a sequence of functions that take one argument. Each function returns another function that
+ * consumes the following argument.
+ *
  * it is a concept in scala where a function accepting multiple parameters can be converted to a function that takes
  * lesser parameters and remaining parameters can be provided later in the code.
  * Function currying at each point returns a new function that is partially resolved; i.e resolved with respect to
@@ -16,6 +20,13 @@ object FunctionCurrying extends App {
   println("Back from sleep")
   println("executing the function")
   println(partiallyAppliedFunction(6))
+
+  val sum: (Int, Int) => Int = (x,y) => x + y
+  println(sum(3,5))
+  println("converting a function that takes multiple arguments into a curried function:")
+  val curriedSum = sum.curried
+  val incrementer = curriedSum(1)
+  println(incrementer(4))
 
   private def functionWithMultipleParams(a:Int, b:Int) ={
     a+b
