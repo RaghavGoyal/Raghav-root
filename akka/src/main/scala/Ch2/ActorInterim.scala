@@ -38,3 +38,4 @@ object ActorInterim extends App {
 
   actor1 ! 1.1
 }
+// Next: ActorRef

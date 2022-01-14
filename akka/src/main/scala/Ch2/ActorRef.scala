@@ -44,3 +44,4 @@ object ActorRef extends App {
   case class ForwardMessage(content: String, destination: ActorRef)
   actor1 ! ForwardMessage("this is forwarded message", actor2)
 }
+// NEXT: ActorBehaviour

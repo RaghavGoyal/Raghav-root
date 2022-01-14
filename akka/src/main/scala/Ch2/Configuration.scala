@@ -1,7 +1,7 @@
 package Ch2
 
 import akka.actor.{Actor, ActorLogging, ActorSystem, Props}
-import com.typesafe.config.ConfigFactory
+import com.typesafe.config.{Config, ConfigFactory}
 
 /**
  * This class demonstrates how the akka configuration can be managed.
@@ -30,7 +30,7 @@ object Configuration extends App {
       | }
       |""".stripMargin
 
-  val config = ConfigFactory.parseString(configString)
+  val config: Config = ConfigFactory.parseString(configString)
   val system = ActorSystem("ConfigurationDemo", ConfigFactory.load(config))
   val actor = system.actorOf(Props[SimpleLoggingActor])
   actor ! "A logging message"

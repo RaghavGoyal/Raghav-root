@@ -52,17 +52,17 @@ object ChildActors extends App {
    * Child actors can also have further child actors.
    *
    * Parent -> Child -> Grand child
-   * -> Child2
+   *        -> Child2
    * Note: The lifecycle of a child actor is tied to the parent – a child can stop itself or be stopped at any time
    * but it can never outlive its parent.
    *
    * There are three kind of guardian actors. They are responsible for managing all the actors. They are:
    * 1. /system : this is a system level guardian. Every actor system has a system guardian that is responsible for
-   * managing all the operations of the actorSystem. Like logging.
+   *              managing all the operations of the actorSystem. Like logging.
    * 2. /user   : This is the user level guardian. Every actor that programmers create using system.actorOf are
-   * governed by the /user guardian, which is a top level guardian for all user actors.
+   *              governed by the /user guardian, which is a top level guardian for all user actors.
    * 3. /       : Root guardian. This guardian is responsible for managing /system and /user guardians.
-   * Root guardian is the top-most level guardian for all the actors.
+   *              Root guardian is the top-most level guardian for all the actors.
    */
 
   /**
@@ -70,7 +70,7 @@ object ChildActors extends App {
    * The specific actor can be selected by its path.
    * The actor selection returns a ActorSelection reference that is a wrapper around ActorRef.
    */
-  val childSelection = system.actorSelection("/user/path/Child1")
+  val childSelection = system.actorSelection("/user/Parent/Child1")
   childSelection ! "Found you kid."
 
 //  Similar actor selection can be done inside another actor. This is achieved by using context.actorSelection(path)
