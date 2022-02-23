@@ -13,6 +13,10 @@ object ConsecutiveDuplicates extends App {
   val output = removeConsecutiveDuplicates(list)
   println(output)
 
+  println(list.head :: list.sliding(2).collect{
+    case Seq(a, b) if (a != b) => b
+  }.toList)
+
   private def removeConsecutiveDuplicates[T](list: List[T]) :List[T] = {
     list match {
       case Nil => Nil

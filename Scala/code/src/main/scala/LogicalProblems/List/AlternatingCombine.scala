@@ -11,6 +11,11 @@ object AlternatingCombine extends App {
   val output = alternateCombine(list1,list2)
   println(output)
 
+  // without recursion:
+  println(list1.zipAll(list2, "","").flatMap{
+    case (a,b) => Seq(a,b)
+  }.filter(_ != ""))
+
   private def alternateCombine(list1: List[Any], list2: List[Any]) : List[Any] = {
     (list1,list2) match {
       case (Nil,Nil) => Nil

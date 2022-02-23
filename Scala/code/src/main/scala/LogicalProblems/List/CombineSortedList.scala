@@ -11,6 +11,8 @@ object CombineSortedList extends App {
 
   val output = combineSortedList(list1,list2)
   println(output)
+  // without recursion
+  println((list1 ::: list2).sorted)
 
   private def combineSortedList(list1:List[Int], list2:List[Int]) :List[Int] = {
     (list1,list2) match {

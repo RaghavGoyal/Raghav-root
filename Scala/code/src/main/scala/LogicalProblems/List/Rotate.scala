@@ -13,6 +13,10 @@ object Rotate extends App {
   println(s"Original List: $list")
   println(s"Rotated List: $output")
 
+  (1 to 10).toList.foreach( elem =>
+    println(list.drop(10 % list.length) ++ list.take(10 % list.length))
+  )
+
   private def rotate(list:List[Any], times: Int): List[Any] = {
     if(times > 0){
       list match {

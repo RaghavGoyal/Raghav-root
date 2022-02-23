@@ -10,6 +10,7 @@ object ElementsOnOddPosition extends App {
   val oddPositionElements = getOddPositionElements(list)
   println(s"Original List : $list")
   println(s"Odd position elements from List : $oddPositionElements")
+  println(list.zipWithIndex.filter(elem => elem._2 % 2 == 0).map(_._1))
 
 
   /**

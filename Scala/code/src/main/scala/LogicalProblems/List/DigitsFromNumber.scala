@@ -23,4 +23,9 @@ object DigitsFromNumber extends App {
       Nil
   }
 
+  // tail recursive; more efficient
+  def getDigits(n:Int, digits: List[Int]= List.empty): List[Int] = {
+    if(n < 10) n::digits else getDigits(n/10, (n%10)::digits)
+  }
+
 }
