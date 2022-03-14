@@ -6,10 +6,10 @@ package LogicalProblems
  * Given 1 => 0 output
  * given 5 => 3 output
  */
-object Fibonacci {
+object Fibonacci extends App {
 
   def fibonacciNumber(element: Int): Int = {
-    val fibo = List(0,1)
+    val fibo = scala.collection.immutable.List(0,1)
     if(element > 2)
       fibonacciNumber(element-1) + fibonacciNumber(element-2)
     else fibo(element-1)

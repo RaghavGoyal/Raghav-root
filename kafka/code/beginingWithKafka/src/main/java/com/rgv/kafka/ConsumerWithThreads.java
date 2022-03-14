@@ -19,10 +19,13 @@ import java.util.concurrent.CountDownLatch;
 public class ConsumerWithThreads {
 
     public static void main(String[] args) {
+        new ConsumerWithThreads().run();
+    }
 
+    private void run(){
         String topic = "first-topic";
         String bootstrapServer = "localhost:9092";
-        String groupId = "javaApplication2";
+        String groupId = "javaApplication6";
         List<String> OFFSET_RESET_CONFIG_types = new ArrayList<String>();
         OFFSET_RESET_CONFIG_types.add("earliest"); // means you want to read from the beginning of the topic
         OFFSET_RESET_CONFIG_types.add("latest"); // means you want to read from the new messages onwards
@@ -30,9 +33,22 @@ public class ConsumerWithThreads {
 
         CountDownLatch countDownLatch = new CountDownLatch(1);
 
-        Runnable myConsumerThread =
+        ConsumerThread myConsumerThread =
                 new ConsumerThread(bootstrapServer, groupId, topic, OFFSET_RESET_CONFIG_types.get(0), countDownLatch);
 
+        // create and start a thread
+        Thread myThread = new Thread(myConsumerThread);
+        myThread.start();
+
+        // add a shutdown hook:
+        Runtime.getRuntime().addShutdownHook(new Thread( () -> {
+            myConsumerThread.shutDown();
+            try{
+                countDownLatch.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }));
     }
 
     public static class ConsumerThread implements Runnable {
@@ -59,6 +75,8 @@ public class ConsumerWithThreads {
             props.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, offsetResetConfig);
 
             consumer = new KafkaConsumer<String, String>(props);
+            // subscribe the consumer to the topic
+            consumer.subscribe(Collections.singleton(topic));
 
         }
 
@@ -68,7 +86,9 @@ public class ConsumerWithThreads {
                 while(true){
                     ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
                     for(ConsumerRecord<String, String> record : records){
-                        logger.info("Consumer got the record from: Topic: "+ record.topic() + "key: "+record.key() + "Value: "+record.value());
+                        logger.info(
+                                "Consumer got the record from: Topic: "+ record.topic() + "key: "+record.key() + "Value: "+record.value()
+                        );
                         System.out.println(
                                 "Consumer got the record." +
                                         " Topic: "+ record.topic() +
@@ -78,6 +98,7 @@ public class ConsumerWithThreads {
                     }
                 }
             } catch(WakeupException ex){
+                System.out.println("Received the wakeup exception. "+ex.getMessage());
                 logger.error("Received Shutdown Signal...");
             } finally {
                 consumer.close();
@@ -93,4 +114,4 @@ public class ConsumerWithThreads {
         }
     }
 }
-// next: 
+// next: ConsumerAssignSeek
