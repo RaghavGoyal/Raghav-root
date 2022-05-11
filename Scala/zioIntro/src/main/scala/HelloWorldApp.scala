@@ -1,13 +1,14 @@
 import zio._
+import zio.console.Console
 
 import java.io.IOException
 
 // First
-object HelloWorldApp extends ZIOAppDefault {
+object HelloWorldApp extends App {
 
-  val myApp: ZIO[Has[Console], IOException, Unit] = Console.printLine("Hello world !")
+  val myApp: ZIO[Console, IOException, Unit] = console.putStrLn("Hello world !")
 
-  override def run = myApp
+  override def run(args: List[String]): URIO[zio.ZEnv, ExitCode] = myApp.exitCode
 }
 
 /**
@@ -22,4 +23,4 @@ object HelloWorldApp extends ZIOAppDefault {
  * This means that running this effect returns the Unit value or may throw IOException.
  */
 
-// next: composing values
+// next: creating effects

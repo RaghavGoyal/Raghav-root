@@ -1,33 +1,32 @@
 import zio._
+import zio.console._
+import zio.random.Random
 
 import java.io.IOException
-import java.util.UUID
-import scala.util.Try
 
-//Second
-object ComposingValues extends ZIOAppDefault {
+object ComposingValues extends App {
 
   /**
    * Using `for comprehension` for composing different ZIO effects.
    */
 
-  val app: ZIO[Has[Console], IOException, Unit] = for {
-    _ <- Console.printLine("Hello! What is your name?")
-    n <- Console.readLine
-    _ <- Console.printLine(s"Hello $n, Nice to meet you.")
+  val app: ZIO[Console, IOException, Unit] = for {
+    _ <- putStrLn("Hello! What is your name?")
+    n <- getStrLn
+    _ <- putStrLn(s"Hello $n, Nice to meet you.")
   }yield ()
 
   /**
    * Using `zip` for composing multiple ZIO effects:
    */
 
-    val app2: ZIO[Has[Console] with Has[Random], IOException, Unit] = for {
-      _ <- Console.printLine("Enter the username:")
-      response <- Random.nextUUID zip Console.readLine
-      _ <- Console.printLine(s"uuid: ${response._1} and username: ${response._2}")
-    }yield()
+  val app2 = for {
+    _ <- putStrLn("Enter the username:")
+    response <- ZIO.succeed("123-456-789-ldkdhf") zip getStrLn
+    _ <- putStrLn(s"uuid: ${response._1} and username: ${response._2}")
+  }yield()
 
-  override def run: ZIO[Has[Console] with Has[Random], IOException, Unit] = app
+  override def run(args: List[String]): URIO[zio.ZEnv, ExitCode] = app.exitCode
 
   def parseToInt(s:String): Option[Int] = {
     try {
@@ -45,4 +44,4 @@ object ComposingValues extends ZIOAppDefault {
  * feed it another effect, which is responsible for printing another message to the user.
  */
 
-// next: Resource safety
+//Next: HandlingError
