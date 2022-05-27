@@ -22,3 +22,4 @@ object Main extends scala.App {
   runtime.unsafeRun(app.provideCustomLayer(diagnosticsLayer))
 
 }
+// next: application tracing.

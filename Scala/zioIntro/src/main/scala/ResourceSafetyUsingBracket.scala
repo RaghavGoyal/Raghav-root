@@ -30,3 +30,4 @@ object ResourceSafetyUsingBracket extends App {
     string <- Task(new FileInputStream(file)).bracket(closeStream)(convertBytes(_, len))
   } yield string
 }
+// next: exit status

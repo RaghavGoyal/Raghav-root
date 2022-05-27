@@ -24,7 +24,7 @@ object Multithreading extends App {
 //  helloThread.start()
 //  byeThread.start()
 
-  // the hello and bye output here is completely unpredicatable and varies from run to run.
+  // the hello and bye output here is completely unpredictable and varies from run to run.
 
   // this can be a serious problem in applications.
   // example:

@@ -22,3 +22,5 @@ object EffectFromPromise extends App {
 
   override def run(args: List[String]): URIO[zio.ZEnv, ExitCode] = app.exitCode
 }
+
+// next: Resource safety using bracket

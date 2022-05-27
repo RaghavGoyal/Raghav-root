@@ -36,3 +36,4 @@ object Main extends scala.App {
 //  There are lots of allocations that all need to be garbage collected afterward.
 //  So it has a tremendous impact on the complexity of the application runtime.
 }
+// next: benchmarking
