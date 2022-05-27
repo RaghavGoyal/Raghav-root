@@ -26,6 +26,10 @@ public class UserService extends userGrpc.userImplBase {
 
     @Override
     public void logout(User.Empty request, StreamObserver<User.APIResponse> responseObserver) {
-
+        System.out.println("logout method...");
+        User.APIResponse.Builder response = User.APIResponse.newBuilder();
+        response.setResponse("logged out.").setResponseStatus(200);
+        responseObserver.onNext(response.build());
+        responseObserver.onCompleted();
     }
 }
