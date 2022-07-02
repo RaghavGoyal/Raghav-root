@@ -12,6 +12,7 @@ object Reverse extends App {
 
   println(s"Original list : $list")
   println(s"Reversed list : $reversedList")
+  println(s"Recursive: ${getReverseListRec(list)}")
 
   /**
    * `:+` is alias for append. Here first element is appended at the end of rest of list
@@ -24,6 +25,16 @@ object Reverse extends App {
       case Nil => Nil
       case first::Nil => List(first)
       case first::rest => getReverseList(rest ) :+ first
+    }
+  }
+
+  // tail recursive:
+  private def getReverseListRec[T](input: List[T], output: List[T]= List.empty): List[T] ={
+    input match {
+      case Nil => output
+      case a::Nil => a::output
+      case a::rest =>
+        getReverseListRec(rest,a :: output)
     }
   }
 

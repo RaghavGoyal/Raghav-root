@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="node-grunt-training">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/node_grunt/node-grunt-training.zip!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

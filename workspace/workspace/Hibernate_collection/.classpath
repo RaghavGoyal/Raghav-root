@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/antlr-2.7.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/asm-attrs.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/commons-collections-3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/ehcache-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/javassist-3.9.0.GA.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/java-util-1.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/javax.servlet.jsp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/jdbc-api-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/jsp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/mysql-connector.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/org-apache-commons-logging.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/slf4j-api-1.5.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Raghav Goyal/Desktop/capg_java/hibernate/hibernateRequiredJar/slf4j-log4j12-1.5.8.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

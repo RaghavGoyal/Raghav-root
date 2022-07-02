@@ -14,7 +14,9 @@ object Sum1to1000 extends App {
     Future((start to end).sum)
   }
 
-  val range = Future.sequence((0 to 9).map(elem => calculateSum((elem*100)+1, (elem+1)*100))).map(_.sum)
+  val range = Future.sequence(
+    (0 to 9).map(elem => calculateSum((elem*100)+1, (elem+1)*100))
+  ).map(_.sum)
 
   Thread.sleep(50)
 
