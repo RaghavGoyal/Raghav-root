@@ -4,7 +4,7 @@ import scala.io.StdIn
 
 /**
  * Problem Statement:
- * Read a number and print the sum of multiples of 3 and 5
+ * Read a number and print the sum of multiples of 3 and 5 from 1 to that number.
  */
 object Problem2 extends App {
 
