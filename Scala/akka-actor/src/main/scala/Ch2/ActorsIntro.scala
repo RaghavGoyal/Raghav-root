@@ -11,6 +11,8 @@ object ActorsIntro extends App {
    *  Actor system name can only contain the alpha-numeric characters, non-leading _ and -
    */
   val actorSystem = ActorSystem("FirstActor")
+  // access name of actor system as:
+  println(actorSystem.name)
 
   /**  An actor system comprises of multiple actors.
    *   Each actor is uniquely identifiable (By name; passed while instantiating).
