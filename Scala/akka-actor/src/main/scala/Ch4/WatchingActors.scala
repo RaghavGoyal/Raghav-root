@@ -15,6 +15,8 @@ object WatchingActors extends App {
         val childRef = context.actorOf(Props[Child], name)
         context.watch(childRef)   // registers the watching of the given actorRef. context.unwatch(ref) to unwatch.
 
+      // when parent is watching any of the child actor, it receives a terminated message from the akka.
+      // this msg is received when the child is terminated. (ex via poisionPill)
       case Terminated(ref) =>
         log.info(s"Child with reference $ref is going to be terminated")
     }

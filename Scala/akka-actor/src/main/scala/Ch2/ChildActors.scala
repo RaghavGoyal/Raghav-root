@@ -1,6 +1,6 @@
 package Ch2
 
-import akka.actor.{Actor, ActorRef, ActorSystem, Props}
+import akka.actor.{Actor, ActorRef, ActorSelection, ActorSystem, Props}
 
 object ChildActors extends App {
 
@@ -48,7 +48,7 @@ object ChildActors extends App {
 
   /**
    * Actors hierarchy.
-   * Child actors are manages by the parent actors.
+   * Child actors are managed by the parent actors.
    * Child actors can also have further child actors.
    *
    * Parent -> Child -> Grand child
@@ -70,7 +70,7 @@ object ChildActors extends App {
    * The specific actor can be selected by its path.
    * The actor selection returns a ActorSelection reference that is a wrapper around ActorRef.
    */
-  val childSelection = system.actorSelection("/user/Parent/Child1")
+  val childSelection: ActorSelection = system.actorSelection("/user/Parent/Child1")
   childSelection ! "Found you kid."
 
 //  Similar actor selection can be done inside another actor. This is achieved by using context.actorSelection(path)

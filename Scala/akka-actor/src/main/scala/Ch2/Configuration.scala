@@ -36,7 +36,7 @@ object Configuration extends App {
   actor ! "A logging message"
 
 //  2. From application.conf
-  val defaultConfigSystem = ActorSystem("defaultConfigSystem")   // No config needed
+  val defaultConfigSystem = ActorSystem("defaultConfigSystem")   // No need to specify any config.
   val defaultConfigActor = defaultConfigSystem.actorOf(Props[SimpleLoggingActor])
   defaultConfigActor ! "Remember me"
 

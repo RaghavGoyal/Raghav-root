@@ -26,7 +26,7 @@ object ActorsIntro extends App {
 
   class WordCountActor extends Actor {
     var words = 0
-//  Receive ia type alias for `PartialFunction[Any, Unit]`
+//  Receive is type alias for `PartialFunction[Any, Unit]`
     override def receive: Receive = {
       case msg: String =>
         println(s"[word counter]: received- $msg")

@@ -2,6 +2,7 @@ package Ch4
 
 import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, Kill, PoisonPill, Props}
 
+// First
 object StartStopActors extends App {
 
   object Parent{
@@ -16,7 +17,7 @@ object StartStopActors extends App {
     def withChild(children : Map[String, ActorRef]): Receive = {
       case StartChild(name) =>
         log.info(s"Starting the child with name: $name")
-        context.become(withChild(children + (name -> context.actorOf(Props[Child]))))
+        context.become(withChild(children + (name -> context.actorOf(Props[Child], name))))
 
       case StopChild(name) =>
         children.get(name) match {
@@ -60,7 +61,7 @@ object StartStopActors extends App {
 
   /**
    * Other ways to stop the actor is using special messages like:
-   * 1. PoisonPill : Gracefully stops the actor i.e. no exception is thrown when it stops the actor.
+   * 1. PoisonPill  : Gracefully stops the actor i.e. no exception is thrown when it stops the actor.
    * 2. Kill        : Brutally stops the actor. i.e. actor kill exception is thrown when Kill is used to stop the actor.
    */
 

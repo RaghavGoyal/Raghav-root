@@ -10,6 +10,8 @@ import scala.annotation.tailrec
 object LargestElement extends App {
   val list = List(10, 11, 13, 9, 5, 30, 14, 99, 55, 19, 29, 35, 80, 75, 72)
 
+  println(list.max)
+
   val max = getMax(list)
 
   println(max)
