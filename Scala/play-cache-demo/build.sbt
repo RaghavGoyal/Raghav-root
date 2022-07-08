@@ -13,7 +13,7 @@ libraryDependencies += "com.github.karelcemus" %% "play-redis" % "2.6.1"
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
 
 // Adds additional packages into Twirl
-//TwirlKeys.templateImports += "com.learning.controllers._"
+// TwirlKeys.templateImports += "com.learning.controllers._"
 
 // Adds additional packages into conf/routes
 // play.sbt.routes.RoutesKeys.routesImport += "com.learning.binders._"

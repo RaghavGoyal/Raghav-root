@@ -14,4 +14,10 @@ class DemoController @Inject()(val controllerComponents: ControllerComponents,
     Ok(response)
   }
 
+  def clearCache(key: String) = Action {
+    val response = service.clearCache(key)
+    Ok(response)
+  }
+
+
 }
